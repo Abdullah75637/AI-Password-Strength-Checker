@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Password Strength Checker</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>AI-Based Password Strength Checker</h1>
+    <p>Machine Learning Powered Security Analysis</p>
+
+    <form method="POST">
+
+        <input
+            type="text"
+            name="password"
+            placeholder="Enter Password"
+            required>
+
+        <br><br>
+
+        <button type="submit">
+            Check Password
+        </button>
+
+    </form>
+
+    <h2 style="color: {{ color }};">
+        {{ prediction }}
+    </h2>
+
+    <p>{{ suggestion }}</p>
+
+    <h3>Strength Score: {{ score }}%</h3>
+
+    <div style="width:80%; margin:auto; background:#ddd; border-radius:10px;">
+        <div style="
+            width: {{ score }}%;
+            background: {{ color }};
+            height: 25px;
+            border-radius:10px;">
+        </div>
+    </div>
+
+    <hr>
+
+    <h3>Password Analysis</h3>
+
+    <p>Length: {{ length }}</p>
+    <p>Uppercase Letters: {{ upper }}</p>
+    <p>Lowercase Letters: {{ lower }}</p>
+    <p>Numbers: {{ digit }}</p>
+    <p>Special Characters: {{ special }}</p>
+
+    <hr>
+
+    <h3>Security Tips</h3>
+
+    <ul>
+        <li>Use at least 8 characters.</li>
+        <li>Include uppercase letters.</li>
+        <li>Include lowercase letters.</li>
+        <li>Add numbers.</li>
+        <li>Use special characters like @, #, $, %.</li>
+        <li>Avoid using your name or birth date.</li>
+    </ul>
+
+</div>
+
+</body>
+</html>
